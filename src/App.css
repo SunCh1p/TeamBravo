@@ -1,0 +1,146 @@
+html, body, #root, .main {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  .main {
+    width: 100%;
+  }
+  
+  .component-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .home {
+    background: linear-gradient(to bottom, rgb(40, 70, 90) 0%, rgb(130 177 223) 100%);
+    width:100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    padding:20px;
+  
+  }
+  
+  .home-buttons-panel {
+    height:90%;
+    display: grid;
+    grid-template-rows: 120px 120px auto;
+  }
+  
+  .home-menu-button {
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #e3eff6;
+    font-size: 25px;
+    font-family:sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .home-menu-button:hover{
+    background-color: #f6eee3;
+  }
+  
+  .home-menu-button:active{
+    background-color: #e4b36f;
+  }
+  .home-item {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    border-radius: 8px;
+    background-color: aliceblue;
+    font-size: large;
+    font-family:sans-serif;
+    align-self: end;
+  }
+  
+  .home-camera-panel {
+    display: flex;
+  
+    height:90%;
+    width:100%;
+  }
+  
+  /*Camera css */
+  .camera-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    border: 1px solid #ccc;
+    background-color: aliceblue;
+    border-radius: 8px;
+  }
+  
+  .camera-container video {
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    text-align: center;
+    border-radius: 8px;
+  
+  }
+  
+  .leaderboard {
+    background: linear-gradient(to bottom, rgb(40, 70, 90) 0%, rgb(130 177 223) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .leaderboard-title {
+    position: absolute;
+    top: 20px;
+    font-size: 40px;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  
+  .leaderboard-players-container {
+    background-color: #21527b;
+    border: 2px solid white;
+    height: 80%;
+    width: 60%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .leaderboard-player-container {
+    border-bottom: 2px solid white;
+    height: 100vh;
+    display: grid;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 8px;
+    grid-template-columns: 50px 1fr 1fr;
+    place-items: center;
+  }
+  
+  .leaderboard-player-container:last-child {
+    border-bottom: none;
+  }
+  
+  .leaderboard-place {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .leaderboard-name, .leaderboard-score {
+    font-size: 30px;
+  }
