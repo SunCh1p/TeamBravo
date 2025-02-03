@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Camera from './Camera';
 
 const Home = props => {
     
@@ -22,7 +23,7 @@ const Home = props => {
                 <div className='home-item'>Item</div>
             </div>
             <div className='home-camera-panel'>
-                <div className='home-camera'>Camera</div>
+                <Camera/>
             </div>
         </div>
     )
