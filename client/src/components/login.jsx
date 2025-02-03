@@ -1,0 +1,52 @@
+import React from "react";
+import {useNavigate} from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import '../styles/login.css'
+function Login(){
+
+  const navigate = useNavigate();
+
+  function playGame(){
+    navigate("/Home");
+  }
+
+  function LeaderBoardClick(){
+    navigate("/leaderboard");
+  }
+
+  function doAlert(message){
+    alert(message);
+  }
+
+  return (
+    <div className='login-background'>
+      <div className='login-logo'><span className='login-item1-logo'>Insert_</span><span className='login-item2-logo'>Logo_Here_<FontAwesomeIcon icon={faCamera} /></span></div>
+      <div className='login-container'>
+        <input type="text" placeholder="Enter Username"></input>
+        <button className="login-button-play" onClick={playGame}>Play</button>
+        <button className="login-button-generic" onClick={() => doAlert('Join Room has been clicked')}>Join Room</button>
+        <button className="login-button-generic" onClick={() => doAlert('Create Room has been clicked')}>Create Room</button>
+        <button className="login-button-generic" onClick={LeaderBoardClick}>Leaderboard</button>
+      </div>
+      <footer className='login-footer'> 
+        <div className='footer-box-item'>
+          <h2>How to play</h2>
+          <p>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        
+        <span>Made by Team Bravo</span>
+      </footer>
+    </div>
+  );
+}
+
+
+export default Login;

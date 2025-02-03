@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import './App.css'
+import './App.css';
+import io from 'socket.io-client';
 
-import Home from './components/Home.jsx'
-import Leaderboard from './components/Leaderboard.jsx'
+import Home from './components/Home.jsx';
+import Leaderboard from './components/Leaderboard.jsx';
+import Login from './components/login.jsx';
+
+const socket = io.connect("https://localhost:3000");
 
 function App() {
 
@@ -11,8 +15,8 @@ function App() {
     <main className='main'>
       <div className='component-container'>
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/' element={<Login/>}/>
+          <Route path='/Home' element={<Home/>}/>
           <Route path='/leaderboard' element={<Leaderboard/>}/>
         </Routes>
       </div>

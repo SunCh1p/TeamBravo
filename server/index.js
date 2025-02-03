@@ -24,13 +24,36 @@ const server = https.createServer({
 const PORT = 3000;
 
 //initialize socket.io
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+  },
+});
 
 //serve static files
 app.use(express.static(path.join(__dirname, '../client/build')));
 
+let users =[];
+
 //handle socket.io connections
 io.on("connection", (socket) => {
+  let Username = "Anonymous";
+
+  socket.on("register_name", (username) => {
+    const user = {
+      username,
+      id: socket.id,
+    }
+    users.push(user);
+    io.emit("new_user", users);
+  });
+
+  socket.on("join_room", (roomName, cb) => {
+    socket.join(roomName);
+    cb(messages[roomName]);
+  });
+
   console.log(`Client Connected: ${socket.id}`);
 
   socket.on("send_message", (data) => {
@@ -45,7 +68,7 @@ io.on("connection", (socket) => {
 
 //handle routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 //start server
