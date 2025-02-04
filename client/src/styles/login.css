@@ -67,7 +67,7 @@ html {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 30%;
+  width: auto;
   height: auto;
   margin-bottom: 10%;
   padding: 20px;

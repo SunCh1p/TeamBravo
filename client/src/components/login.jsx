@@ -15,6 +15,10 @@ function Login(){
     navigate("/leaderboard");
   }
 
+  function joinRoomClick(){
+    navigate("/Room");
+  }
+
   function doAlert(message){
     alert(message);
   }
@@ -25,7 +29,7 @@ function Login(){
       <div className='login-container'>
         <input type="text" placeholder="Enter Username"></input>
         <button className="login-button-play" onClick={playGame}>Play</button>
-        <button className="login-button-generic" onClick={() => doAlert('Join Room has been clicked')}>Join Room</button>
+        <button className="login-button-generic" onClick={joinRoomClick}>Join Room</button>
         <button className="login-button-generic" onClick={() => doAlert('Create Room has been clicked')}>Create Room</button>
         <button className="login-button-generic" onClick={LeaderBoardClick}>Leaderboard</button>
       </div>
