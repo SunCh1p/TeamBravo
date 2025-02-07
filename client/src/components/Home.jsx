@@ -1,8 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Camera from './Camera';
+import socket from '../socket';
 
 const Home = props => {
+    const [usersInRoom, updateUsersInRoom] = useState([]);
+    useEffect(() => {
+        socket.emit('connect game')
+
+        socket.on('room data', (data) => {
+            console.log(data);
+        })
+
+        return () => {
+            socket.emit('leave game')
+        }
+    },[])
     
     const navigate = useNavigate();
 

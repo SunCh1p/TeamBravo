@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import '../styles/login.css'
+import socket from '../socket';
 function Login(){
 
+  const [username, setUsername] = useState("Anonymous");
   const navigate = useNavigate();
 
+  function updateUsername(event){
+    setUsername(event.target.value);
+  }
+
   function playGame(){
+    socket.emit('username change', {data: username});
+
     navigate("/Home");
   }
 
@@ -27,7 +35,7 @@ function Login(){
     <div className='login-background'>
       <div className='login-logo'><span className='login-item1-logo'>Insert_</span><span className='login-item2-logo'>Logo_Here_<FontAwesomeIcon icon={faCamera} /></span></div>
       <div className='login-container'>
-        <input type="text" placeholder="Enter Username"></input>
+        <input onChange = {updateUsername} type="text" placeholder="Enter Username"></input>
         <button className="login-button-play" onClick={playGame}>Play</button>
         <button className="login-button-generic" onClick={joinRoomClick}>Join Room</button>
         <button className="login-button-generic" onClick={() => doAlert('Create Room has been clicked')}>Create Room</button>

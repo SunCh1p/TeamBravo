@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
-import io from 'socket.io-client';
+import socket from './socket';
 
 import Home from './components/Home.jsx';
 import Leaderboard from './components/Leaderboard.jsx';
 import Login from './components/login.jsx';
 import Room from './components/Room.jsx';
 
-const socket = io.connect("https://localhost:3000");
+
+
 
 function App() {
 
