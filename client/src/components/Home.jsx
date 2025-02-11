@@ -8,7 +8,6 @@ const Home = props => {
     const navigate = useNavigate();
 
     const JoinClick = () => {
-        navigate("/login");
         alert("Play was clicked");
     }
 
@@ -48,7 +47,6 @@ const Home = props => {
                     <div className='settings-button-container'>
                         <button className='settings-button' onClick={SettingsClick}>Settings</button>
                         <button className='settings-button' onClick={BackEndClick}>Backend</button>
-                        <button className='settings-button' onClick={SettingsClick}>AI</button>
                     </div>
                 </div>
                 
