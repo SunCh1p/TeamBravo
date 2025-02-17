@@ -1,6 +1,8 @@
 import {io} from 'socket.io-client';
 
-const socket = io();
+const socket = io({
+  transports:['websocket'],
+});
 
 socket.on('connect', function() {
   socket.emit('client connection', {data: 'I/m connected!'});

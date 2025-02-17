@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Camera from './Camera';
-import socket from '../socket';
+import socket from '../../socket';
 
 const Home = props => {
     const [usersInRoom, updateUsersInRoom] = useState([]);
